@@ -13,4 +13,6 @@ candle/src> mv www/json/apiconfig.json.sample www/json/apiconfig.json
 candle/src> node candle/main.js
 ```
 
+Then navigate to <http://localhost:8081/>
+
 
