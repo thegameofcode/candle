@@ -8,7 +8,8 @@
    "expand": false,
    "details": false,
    "canCopy": false,
-   "showPastedItems": false
+   "showPastedItems": false,
+   "inline": true
   },
   "version": {
     "type": "list",

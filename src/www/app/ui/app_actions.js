@@ -10,18 +10,23 @@ iris.ui(function(self) {
 			app.save();
 		});
 		self.get('btnCancel').click(function() {
+			window.location.replace('.');
+		});
+		
+		self.get('btnUnEdit').click(function() {
 			app.setEditable(false);
 		});
+
 		self.get('btnEdit').click( function() {
 			app.setEditable(true);
 		});
 
 		self.on(iris.evts.edit, function() {
-			self.get().find("button, input").prop('disabled', true);
+			self.get().find("button").hide();
 		});
 
 		self.on(iris.evts.endEdit, function() {
-			self.get().find("button, input").prop('disabled', false);
+			render();
 		});
 
 		render();
@@ -37,6 +42,7 @@ iris.ui(function(self) {
 		self.get('btnSave').toggle(app.isEditable());
 		self.get('btnCancel').toggle(app.isEditable());
 		self.get('btnEdit').toggle(!app.isEditable());
+		self.get('btnUnEdit').toggle(app.isEditable());
 	}
 
 

@@ -2,6 +2,7 @@
 	"ACTIONS": {
 		"SAVE": "Save",
 		"EDIT": "Edit",
+		"UNEDIT": "Unedit",
 		"CANCEL": "Cancel",
 		"DETAILS": "Details",
 		"OK": "OK",
