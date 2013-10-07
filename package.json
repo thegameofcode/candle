@@ -4,25 +4,27 @@
   "dependencies": {
     "async": "0.2.x",
     "express": "3.x",
-    "request": "*"
+    "request": "*",
+    "fs": "*"
   },
-  "engines": {
-    "node": "0.10.x",
-    "npm": "1.1.x"
-  },
-  "description": "candle =======",
+  "description": "candle",
   "main": "index.js",
   "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/thegameofcode/candle.git"
   },
-  "author": "surtich <surtich@gmail.com>",
-  "license": "BSD-2-Clause",
+  "author": "IGZJavierPerez <surtich@gmail.com>",
   "bugs": {
     "url": "https://github.com/thegameofcode/candle/issues"
-  }
+  },
+  "engines": {
+    "node": ">=0.8.0",
+    "npm": ">=1.2.10"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+    ]
 }
