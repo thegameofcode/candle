@@ -1,16 +1,16 @@
-var commons  = require('../lib/commons.js')
+var commons  = require('./lib/commons.js')
 ,   express  = commons.express
 ,	  app  = express()
 ,   fs  = commons.fs
 ,   path  = commons.path
 ,   request  = commons.request
-,   config  = require('../lib/config/local.json');
+,   config  = require('./lib/config/local.json');
 
 
 app.configure(
  function() {
   app.use( express.bodyParser() );
-  app.use( express.static(__dirname + '/../www') );
+  app.use( express.static(__dirname + '/www') );
   app.use( app.router );
   app.use(
    express.errorHandler(
@@ -160,19 +160,19 @@ function processRequest(req, res, next) {
 
 
 function removeApis(apiKey) {
- var apiconfig = JSON.parse(readFile(path.join(__dirname, '/../www/json/apiconfig.json')));
+ var apiconfig = JSON.parse(readFile(path.join(__dirname, '/www/json/apiconfig.json')));
  for (var i = 0; i < apiconfig.length; i++) {  
   var api = apiconfig[i];
-  removeFile(path.join(__dirname, '/../www/json/' + api[apiKey] + ".json"));
+  removeFile(path.join(__dirname, '/www/json/' + api[apiKey] + ".json"));
  }
 }
 
 function saveApiConfig(apis) {
- createFile(path.join(__dirname, '/../www/json/apiconfig.json'), JSON.stringify(apis, null, '\t'));
+ createFile(path.join(__dirname, '/www/json/apiconfig.json'), JSON.stringify(apis, null, '\t'));
 }
-
+  
 function getApiKey() {
- var schemas = require(path.join(__dirname, '/../www/json/schemas.json'));
+ var schemas = require(path.join(__dirname, '/www/json/schemas.json'));
 
  var apiKey = null;
 
@@ -188,7 +188,7 @@ function getApiKey() {
 
 
 function saveApi(api, apiKey) {
- createFile(path.join(__dirname, '/../www/json/' + api[apiKey] + ".json"), JSON.stringify({
+ createFile(path.join(__dirname, '/www/json/' + api[apiKey] + ".json"), JSON.stringify({
   'endpoints':[]
  }), null, '\t');
 }
